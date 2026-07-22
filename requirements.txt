@@ -1,0 +1,6 @@
+ccxt
+pandas
+requests
+flask
+google-generativeai
+google-genai
