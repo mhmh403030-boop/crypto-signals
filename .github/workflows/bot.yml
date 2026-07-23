@@ -1,27 +1,27 @@
-Name: Run Crypto Bot
+name: Run Crypto Bot
 
 on:
   schedule:
-    - cron: '*/20 * * * *'  # اجرای خودکار هر ۲۰ دقیقه (کاملاً رایگان برای کل ماه)
-  workflow_dispatch:        # قابلیت اجرای دستی
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Run Main Script
-      run: |
-        python crypto-signals/main.py
+      - name: Run Main Script
+        run: |
+          python crypto-signals/main.py
